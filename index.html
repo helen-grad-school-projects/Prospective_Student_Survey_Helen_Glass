@@ -1,0 +1,91 @@
+<!--This assignment was submitted by Helen Glass. This file is the HTML for the prospective student form as part of part
+2 of assignment 1. It is the code which creates the form fields and inputs such as name and survey numbers, that the
+user can interact with in their browser. The css for this file can be found separately at /css/style.css-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prospective Student Survey</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div>
+    <h1>Prospective Student Survey</h1>
+    <form>
+        <div ><small>* Denotes required field</small></div>
+        <div class="form-control">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" required>
+        </div>
+        <div class="form-control">
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" required>
+        </div>
+        <div class="form-control">
+            <label for="address">Street Address*</label>
+            <input type="text" id="address" required>
+        </div>
+        <div class="form-control">
+            <label for="city">City*</label>
+            <input type="text" id="city" required>
+        </div>
+        <div class="form-control">
+            <label for="state">State*</label>
+            <input type="text" id="state" required>
+        </div>
+        <div class="form-control">
+            <label for="zip">Zip*</label>
+            <input type="text" id="zip" required>
+        </div>
+        <div class="form-control">
+            <label for="telephone">Telephone Number*</label>
+            <input type="tel" id="telephone" required>
+        </div>
+        <div class="form-control">
+            <label for="email">Email*</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-control">
+            <label for="date">Date of Survey*</label>
+            <input type="date" id="date" required>
+        </div>
+        <div class="form-control">
+            <label >Liked Most About the Campus</label>
+            <label for="likedStudents"><input type="checkbox" id="likedStudents" name="likedStudents">Students</label>
+            <label for="likedStudents"><input type="checkbox" id="likedLocation" name="likedLocation">Location</label>
+            <label for="likedCampus"><input type="checkbox" id="likedCampus" name="likedCampus">Campus</label>
+            <label for="likedAtmosphere"><input type="checkbox" id="likedAtmosphere" name="likedAtmosphere">Atmosphere</label>
+            <label for="likedDormRooms"><input type="checkbox" id="likedDormRooms" name="likedDormRooms">Dorm Rooms</label>
+            <label for="likedSports"><input type="checkbox" id="likedSports" name="likedSports">Sports</label>
+        </div>
+        <div class="form-control">
+            <label>How did you become interested in the university?</label>
+            <label for="interestFriends"><input type="radio" id="interestFriends" name="interest" >Friends</label>
+            <label for="interestTelevision"><input type="radio" id="interestTelevision" name="interest" >Television</label>
+            <label for="interestInternet"><input type="radio" id="interestInternet" name="interest" >Internet</label>
+            <label for="interestOther"><input type="radio" id="interestOther" name="interest" >Other</label>
+        </div>
+        <div class="form-control">
+            <label for="likelihood">Likelihood of Recommending this School</label>
+            <select id="likelihood">
+                <option value="">Select One</option>
+                <option value="veryLikely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="raffle">Raffle (10 comma-separated numbers 1-100)</label>
+            <input type="text" id="raffle" >
+        </div>
+        <div class="form-control">
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" rows="4"></textarea>
+        </div>
+        <div class="form-control">
+            <button type="submit">Submit</button>
+            <button type="reset">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
