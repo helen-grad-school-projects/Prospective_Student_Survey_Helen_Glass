@@ -20,6 +20,9 @@ pipeline {
     
     stage('Docker Build') {
       steps {
+        // Initialize Docker
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
         // Build the Docker image
         sh 'docker build -t helen-glass-tomcat-app .'
       }
