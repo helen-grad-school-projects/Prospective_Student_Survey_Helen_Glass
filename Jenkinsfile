@@ -3,13 +3,6 @@ pipeline {
   
   stages {
 
-    stage('Checkout') {
-      steps {
-        // Checkout the code from the GitHub repository
-        checkout scm
-      }
-    }
-    
     stage('Build') {
       steps {
         // Remove any warfiles already in the directory
