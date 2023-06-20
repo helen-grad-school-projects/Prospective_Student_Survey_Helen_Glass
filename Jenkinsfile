@@ -1,5 +1,11 @@
 pipeline {
   agent any
+
+  // Initialize Docker in pipeline  
+  stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
   
   stages {
     stage('Checkout') {
@@ -20,9 +26,6 @@ pipeline {
     
     stage('Docker Build') {
       steps {
-        // Initialize Docker
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
         // Build the Docker image
         sh 'docker build -t helen-glass-tomcat-app .'
       }
