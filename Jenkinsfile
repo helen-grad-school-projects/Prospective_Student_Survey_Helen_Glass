@@ -3,12 +3,6 @@ pipeline {
   
   stages {
 
-    // Initialize Docker in pipeline  
-    stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
-
     stage('Checkout') {
       steps {
         // Checkout the code from the GitHub repository
