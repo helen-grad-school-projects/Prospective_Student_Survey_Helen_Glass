@@ -1,8 +1,9 @@
 pipeline {
   agent any
-  def imageName = 'helencglass/student-survey:${BUILD_TIMESTAMP}'
+
   
   stages {
+    def imageName = 'helencglass/student-survey:${BUILD_TIMESTAMP}'
 
     stage('Build') {
       steps {
