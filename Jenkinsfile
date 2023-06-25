@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  def imageName = 'helencglass/student-survey:${BUILD_TIMESTAMP}'
   
   stages {
 
@@ -15,7 +16,16 @@ pipeline {
     stage('Docker Build') {
       steps {
         // Build the Docker image
-        sh 'docker build -t helen-glass-tomcat-app .'
+        sh 'docker build -t ${imageName} .'
+      }
+    }
+
+    stage('Docker Push') {
+      steps {
+        // Login to Dockerhub 
+        sh 'docker login -u helencglass -p ${DOCKERHUB_PASS}'
+        // Build the Docker image
+        sh 'docker push ${imageName}'
       }
     }
     
