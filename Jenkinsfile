@@ -2,9 +2,6 @@ def imageName = "helencglass/student-survey:${BUILD_TIMESTAMP}"
 
 pipeline {
   agent any
-  environment {
-    DOCKERHUB_PASS = credentials('DOCKERHUB_PASS')
-  }
   
   stages {
 
