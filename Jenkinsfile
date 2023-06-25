@@ -1,8 +1,10 @@
-def imageName = 'helencglass/student-survey:${BUILD_TIMESTAMP}'
+def imageName = "helencglass/student-survey:${BUILD_TIMESTAMP}"
 
 pipeline {
   agent any
-
+  environment {
+    DOCKERHUB_PASS = credentials('DOCKERHUB_PASS')
+  }
   
   stages {
 
@@ -18,16 +20,16 @@ pipeline {
     stage('Docker Build') {
       steps {
         // Build the Docker image
-        sh 'docker build -t ${imageName} .'
+        sh "docker build -t ${imageName} ."
       }
     }
 
     stage('Docker Push') {
       steps {
         // Login to Dockerhub 
-        sh 'docker login -u helencglass -p ${DOCKERHUB_PASS}'
+        sh "docker login -u helencglass -p ${DOCKERHUB_PASS}"
         // Build the Docker image
-        sh 'docker push ${imageName}'
+        sh "docker push ${imageName}"
       }
     }
     
