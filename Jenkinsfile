@@ -32,7 +32,8 @@ pipeline {
 
     stage('Deploy to K8s') {
         steps{
-            sh "kubectl set image deployment/student-survey student-survey=${imageName}"
+            //sh "kubectl set image deployment/student-survey student-survey=${imageName}"
+            sh "kubectl get deployments"
         }
     }
     
