@@ -1,3 +1,5 @@
+// This Jenkinsfile is used to deploy build and deploy the containerized Tomcat application to a Kubernetes Cluster
+
 // Create image variable for re-use across stages
 def imageName = "helencglass/student-survey:${BUILD_TIMESTAMP}"
 
