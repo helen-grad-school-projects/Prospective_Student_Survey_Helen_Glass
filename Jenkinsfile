@@ -1,10 +1,10 @@
+// Create image variable for re-use across stages
 def imageName = "helencglass/student-survey:${BUILD_TIMESTAMP}"
 
 pipeline {
   agent any
   
   stages {
-
     stage('Build') {
       steps {
         // Remove any warfiles already in the directory
@@ -31,9 +31,10 @@ pipeline {
     }
 
     stage('Deploy to K8s') {
-        steps{
-            sh "kubectl set image deployment/student-survey container-0=${imageName}"
-        }
+      steps{
+        // Deploy image to K8s cluster
+        sh "kubectl set image deployment/student-survey container-0=${imageName}"
+      }
     }
     
   }
