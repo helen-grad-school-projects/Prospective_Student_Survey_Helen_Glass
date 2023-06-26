@@ -29,6 +29,10 @@ pipeline {
         sh "docker push ${imageName}"
       }
     }
+
+    stage('Deploy to K8s') {
+        sh "kubectl set image deployment/student-survey student-survey=${imageName} -n jenkins-pipeline"
+    }
     
   }
 }
