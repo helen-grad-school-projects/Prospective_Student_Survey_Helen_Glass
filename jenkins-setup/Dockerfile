@@ -23,3 +23,12 @@ RUN apt-get update  -qq \
 
 # Adds jenkins user to docker group so it has permission to run docker commands
 RUN usermod -aG docker jenkins
+
+# Downloads the latest kubectl
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Installs the above kubectl
+RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Copies KubeConfig file to appropriate directory
+COPY swe645-k8s-cluster.yml /root/.kube/config
