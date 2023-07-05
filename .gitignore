@@ -1,2 +1,7 @@
+# This assignment was submitted by Helen Glass. This .gitignore file keeps the war file and
+# Kubeconfig file that are stored here from being pushed to Github.
+
 *.war
 swe645-k8s-cluster.yml
+SWE645_HW2_K8_Installation_Instructions_Helen_Glass.pdf
+SWE645_HW2_K8_Setup_Video_Helen_Glass.mov

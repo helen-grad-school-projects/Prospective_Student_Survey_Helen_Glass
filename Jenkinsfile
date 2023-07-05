@@ -1,4 +1,5 @@
-// This Jenkinsfile is used to deploy build and deploy the containerized Tomcat application to a Kubernetes Cluster
+// This assignment was submitted by Helen Glass. This Jenkinsfile is used to deploy build and deploy the containerized
+// Tomcat application to a Kubernetes Cluster.
 
 // Create image variable for re-use across stages
 def imageName = "helencglass/student-survey:${BUILD_TIMESTAMP}"
@@ -35,7 +36,7 @@ pipeline {
     stage('Deploy to K8s') {
       steps{
         // Deploy image to K8s cluster
-        sh "kubectl set image deployment/student-survey container-0=${imageName}"
+        sh "kubectl set image deployment/tomcat-deployment container-0=${imageName}"
       }
     }
     

@@ -1,3 +1,6 @@
+# This assignment was submitted by Helen Glass. This Dockerfile builds an a Tomcat image with the prospective student
+# survey that was created in HW1.
+
 # Use an official Tomcat runtime as the base image
 FROM tomcat:9.0
 

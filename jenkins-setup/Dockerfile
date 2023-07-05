@@ -1,3 +1,6 @@
+# This assignment was s ubmitted by Helen Glass. This Dockerfile builds a custom image with Jenkins installed, 
+# and also installs Docker and kubectl CLI on the image, so that jenkins is able to run docker and kubectl commands.
+
 # Use an official Jenkins LTS as the base image
 FROM jenkins/jenkins:lts
 
